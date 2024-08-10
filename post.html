@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Subscription Section</title>
+
+    <style>
+        body{
+            background-color: #090909;
+        }
+        .subscription-loader {
+
+            border-radius: 9px;
+
+            background-color: rgba(3, 13, 26, 1);
+
+            max-width: 500px;
+
+            overflow: hidden;
+
+            padding: 20px 25px;
+
+        }
+
+        .subscription-container {
+
+            display: flex;
+
+            gap: 20px;
+
+        }
+
+        .sidebar {
+
+            display: flex;
+
+            flex-direction: column;
+
+            line-height: normal;
+
+            width: 23%;
+
+        }
+
+        .logo-container {
+
+            display: flex;
+
+            width: 100%;
+
+            flex-direction: column;
+
+            white-space: nowrap;
+
+            font: 700 32px Museo Sans, sans-serif;
+
+            }
+            .logo-primary {
+
+            color: rgba(40, 143, 192, 1);
+
+            align-self: start;
+
+            }
+
+            .logo-secondary {
+
+            align-self: start;
+
+            display: flex;
+
+            }
+
+            .logo-secondary-blue {
+
+        color: rgba(40, 143, 192, 1);
+
+        margin-right: -39px;
+
+        flex-grow: 1;
+
+        }
+
+        .logo-secondary-white {
+
+        color: rgba(255, 255, 255, 1);
+
+        }
+
+        .nav-links {
+
+        display: flex;
+
+        margin-top: 56px;
+
+        flex-direction: column;
+
+        align-items: start;
+
+        color: rgba(168, 191, 204, 1);
+
+        padding: 0 18px 0 5px;
+
+        font: 400 14px Mukta, sans-serif;
+
+        }
+        .nav-link {
+
+        margin-top: 7px;
+
+        text-decoration: none;
+
+        color: inherit;
+
+        }
+        .user-info {
+
+            display: flex;
+
+            margin-top: 165px;
+
+            gap: 7px;
+
+            color: rgba(255, 255, 255, 1);
+
+            font: 500 13px Mukta, sans-serif;
+
+            }
+            .user-avatar {
+
+background-color: rgba(217, 217, 217, 1);
+
+border-radius: 50%;
+
+display: flex;
+
+width: 40px;
+
+height: 40px;
+
+}   
+.username {
+
+margin: auto 0;
+
+}
+
+.main-content {
+
+display: flex;
+
+flex-direction: column;
+
+line-height: normal;
+
+width: 77%;
+
+margin-left: 20px;
+
+}
+.subscription-header {
+
+display: flex;
+
+margin-top: 4px;
+
+width: 100%;
+
+flex-direction: column;
+
+}
+
+.subscription-title-container {
+
+display: flex;
+
+width: 100%;
+
+gap: 20px;
+
+justify-content: space-between;
+
+}
+.subscription-title {
+
+color: rgba(255, 255, 255, 1);
+
+font: 600 20px Mukta, sans-serif;
+
+}
+
+.dropdown-container {
+
+align-self: start;
+
+display: flex;
+
+gap: 18px;
+
+}
+
+.dropdown-line {
+
+background-color: rgba(255, 255, 255, 1);
+
+display: flex;
+
+height: 1px;
+
+width: 15px;
+
+margin: 2px 0;
+
+}
+.dropdown-arrow {
+
+aspect-ratio: 1;
+
+object-fit: contain;
+
+object-position: center;
+
+width: 10px;
+
+}
+
+.subscription-subtitle {
+
+color: rgba(129, 149, 162, 1);
+
+align-self: start;
+
+font: 400 15px Mukta, sans-serif;
+
+}
+.subscription-item {
+
+border-radius: 10px;
+
+background-color: rgba(3, 13, 26, 1);
+
+display: flex;
+
+margin-top: 31px;
+
+width: 100%;
+
+flex-direction: column;
+
+overflow: hidden;
+
+font-family: Mukta, sans-serif;
+
+font-weight: 500;
+
+padding: 6px 12px 20px;
+
+border: 1px solid rgba(3, 28, 46, 1);
+
+}
+.subscription-item-header {
+
+display: flex;
+
+gap: 20px;
+
+font-size: 14px;
+
+color: rgba(255, 255, 255, 1);
+
+justify-content: space-between;
+
+}
+.subscription-item-icon {
+
+aspect-ratio: 1;
+
+object-fit: contain;
+
+object-position: center;
+
+width: 20px;
+
+border-radius: 5px;
+
+align-self: start;
+
+margin-top: 4px;
+
+}
+.subscription-item-expiry {
+
+color: rgba(129, 149, 162, 1);
+
+font-size: 13px;
+
+align-self: start;
+
+}
+.subscription-placeholder {
+
+border-radius: 10px;
+
+background-color: rgba(3, 13, 26, 1);
+
+display: flex;
+
+margin-top: 9px;
+
+height: 75px;
+
+border: 1px solid rgba(3, 28, 46, 1);
+
+}
+@media (max-width: 991px) {
+
+.subscription-loader {
+
+    padding-right: 20px;
+
+}
+.subscription-container {
+
+flex-direction: column;
+
+align-items: stretch;
+
+gap: 0px;
+
+}
+
+.sidebar {
+
+width: 100%;
+
+}
+.logo-container {
+
+margin-top: 40px;
+
+white-space: initial;
+
+}
+
+.logo-secondary {
+
+white-space: initial;
+
+}
+.nav-links {
+
+margin-top: 40px;
+
+white-space: initial;
+
+}
+
+.user-info {
+
+margin-top: 40px;
+
+white-space: initial;
+
+}
+.main-content {
+
+width: 100%;
+
+}
+
+.subscription-header {
+
+margin-top: 40px;
+
+}
+}
+</style>
+</head>
+
+<body>
+
+    <section class="subscription-loader">
+
+        <div class="subscription-container">
+
+            <aside class="sidebar">
+                <div class="logo-container">
+
+                    <div class="logo-primary">NL</div>
+
+                    <div class="logo-secondary">
+
+                        <div class="logo-secondary-blue">NL</div>
+
+                        <div class="logo-secondary-white">NL</div>
+
+                    </div>
+
+                </div>
+                <nav class="nav-links">
+
+                    <a href="#" class="nav-link">Website</a>
+
+                    <a href="#" class="nav-link">Support</a>
+
+                </nav>
+
+                <div class="user-info">
+
+                    <div class="user-avatar" aria-hidden="true"></div>
+
+                    <span class="username">Edv1n4s</span>
+
+                </div>
+            </aside>
+            <main class="main-content">
+
+                <div class="subscription-header">
+
+                    <div class="subscription-title-container">
+
+                        <h2 class="subscription-title">Subscription</h2>
+
+                        <div class="dropdown-container">
+
+                            <div class="dropdown-icon" aria-hidden="true">
+
+                                <div class="dropdown-line"></div>
+
+                                <div class="dropdown-line"></div>
+
+                            </div>
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5a5db79e02f771221890b8c148ea7ed725d29bc6828546bcfb32f1b1bfb3c8ce?placeholderIfAbsent=true&apiKey=baa2d3566fdb496686050f838b7f46cc" alt="" class="dropdown-arrow" aria-hidden="true" />
+
+                        </div>
+
+                    </div>
+                    <h3 class="subscription-subtitle">Available subscriptions</h3>
+
+                    <div class="subscription-item">
+
+                        <div class="subscription-item-header">
+
+                            <span>Counter-Strike: Global Offensive</span>
+
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1b887647fc2d716cb534c87230fef4d695e322520933d1ab19d602d4aa445c29?placeholderIfAbsent=true&apiKey=baa2d3566fdb496686050f838b7f46cc" alt="Counter-Strike: Global Offensive icon" class="subscription-item-icon" />
+
+                        </div>
+                        <span class="subscription-item-expiry">Expires in 16 days</span>
+
+                    </div>
+
+                    <div class="subscription-placeholder" aria-hidden="true"></div>
+
+                    <div class="subscription-placeholder" aria-hidden="true"></div>
+                </div>
+
+            </main>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
